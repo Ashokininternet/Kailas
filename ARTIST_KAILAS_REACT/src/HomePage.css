@@ -4,9 +4,9 @@ body {
     min-height: 100vh;
     background-color: #050517;
     background-image:
-        radial-gradient(circle at 0 0, rgba(255,255,255,0.08) 0, transparent 55%),
-        radial-gradient(circle at 100% 100%, rgba(255,255,255,0.08) 0, transparent 55%),
-        radial-gradient(circle, rgba(255,255,255,0.14) 1px, transparent 1px);
+        radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.08) 0, transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.08) 0, transparent 55%),
+        radial-gradient(circle, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
     background-size:
         100% 100%,
         100% 100%,
@@ -19,7 +19,8 @@ body {
 .page-header {
     display: flex;
     flex-direction: column;
-    align-items: center;     /* centers .h1_1 horizontally */
+    align-items: center;
+    /* centers .h1_1 horizontally */
     justify-content: center;
     padding-top: 20px;
     text-align: center;
@@ -29,13 +30,14 @@ body {
 .h1_1 {
     font-weight: 900;
     color: #fdfdfd;
-    font-size: clamp(26px, 6vw, 54px); /* responsive size */
+    font-size: clamp(26px, 6vw, 54px);
+    /* responsive size */
     margin: 10px 0 6px;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     text-shadow:
         0 0 3px #000,
-        0 0 12px rgba(0,0,0,0.9);
+        0 0 12px rgba(0, 0, 0, 0.9);
     border-bottom: 4px solid #fdfdfd;
     display: inline-block;
     padding: 0 14px 4px;
@@ -50,7 +52,7 @@ h5 {
     text-align: center;
     margin: 4px 0 18px;
     text-transform: uppercase;
-    text-shadow: 0 0 5px rgba(0,0,0,0.7);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
 }
 
 /* GRID – RESPONSIVE FOR MOBILE + DESKTOP */
@@ -83,7 +85,7 @@ h5 {
     content: "";
     position: absolute;
     inset: 65% -40px -40px -40px;
-    background-image: radial-gradient(circle, rgba(0,0,0,0.25) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.25) 1px, transparent 1px);
     background-size: 5px 5px;
     opacity: 0.25;
     pointer-events: none;
@@ -147,56 +149,60 @@ h5 {
             0 0 0 1px #000 inset;
     }
 }
+
 .bottom-nav {
-position: sticky;
-bottom: 0;
-width: 100%;
-background: #0a0a0f;
-border-top: 2px solid #1a1a1a;
-box-shadow: 0 -4px 8px rgba(0,0,0,0.25);
-z-index: 20;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    background: #0a0a0f;
+    border-top: 2px solid #1a1a1a;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.25);
+    z-index: 20;
 }
 
 .bottom-nav__inner {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 28px;
-padding: 12px 16px;
-max-width: 1200px;
-margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    padding: 12px 16px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .bottom-nav__link {
-color: #f3f3f3;
-text-decoration: none;
-font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-font-weight: 700;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-padding: 6px 12px;
-border-radius: 8px;
-transition: transform 0.2s ease, background-color 0.2s ease;
-background: rgba(255,255,255,0.04);
-border: 1px solid rgba(255,255,255,0.12);
+    color: #f3f3f3;
+    text-decoration: none;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 }
+
 .bottom-nav__link:hover,
 .bottom-nav__link:focus {
-transform: translateY(-1px);
-background: rgba(255,255,255,0.12);
-outline: none;
+    transform: translateY(-1px);
+    background: rgba(255, 255, 255, 0.12);
+    outline: none;
 }
+
 .bottom-nav__link:active {
-transform: translateY(0);
-background: rgba(255,255,255,0.18);
+    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.18);
 }
 
 /* Optional: tweak for very small screens */
 @media (max-width: 600px) {
-.bottom-nav__inner {
-gap: 12px;
-}
-.bottom-nav__link {
-padding: 6px 10px;
-}
+    .bottom-nav__inner {
+        gap: 12px;
+    }
+
+    .bottom-nav__link {
+        padding: 6px 10px;
+    }
 }
