@@ -26,7 +26,7 @@ function HomePage() {
                 <nav className="bottom-nav__inner" role="navigation"> 
                     <a href="/Kailas/#/animation" className="bottom-nav__link" title="Animation">Animation</a> 
                     
-                    <a href="/Kailas/#/crafts" className="bottom-nav__link" title="Crafts">Crafts</a> 
+                    {/* <a href="/Kailas/#/crafts" className="bottom-nav__link" title="Crafts">Crafts</a>  */}
                 </nav> 
             </div>
             <footer>
