@@ -39,7 +39,7 @@ export function AnimationPage() {
             </main>
             <div className="bottom-nav" aria-label="Bottom navigation">
                 <nav className="bottom-nav__inner" role="navigation">
-                    <a href="/Kailas/#/" className="bottom-nav__link" title="Art Gallery">ART GALLERY</a>
+                    <a href="/" className="bottom-nav__link" title="Art Gallery">ART GALLERY</a>
                     {/* <a href="/Kailas/#/crafts" className="bottom-nav__link" title="Crafts">Crafts</a> */}
                 </nav>
             </div>
