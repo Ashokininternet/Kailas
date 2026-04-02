@@ -1,51 +1,98 @@
-import { gridData } from "./Data/AnimationsData"
-import './HomePage.css'
+import { supabase } from "./supabase";
+import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import "./HomePage.css";
 
+// ✅ Optimized Video Component
+function VideoItem({ src }) {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          // Lazy load only when visible
+          if (!video.src) video.src = src;
+
+          // Pause all other videos (only one plays)
+          document.querySelectorAll("video").forEach((v) => {
+            if (v !== video) v.pause();
+          });
+
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.6 }
+    );
+
+    if (video) observer.observe(video);
+
+    return () => observer.disconnect();
+  }, [src]);
+
+  return (
+    <video
+      ref={videoRef}
+      className="art-img"
+      muted
+      controls
+      playsInline
+      preload="none"
+    />
+  );
+}
+
+// ✅ Main Page
 export function AnimationPage() {
-    return (
-        <>
-            <header>
-                <div className="page-header">
-                    <h1 className="h1_1">Kailas S.R Art Corner</h1>
-                    <h5>Animations</h5>
-                </div>
-            </header>
-            <main className="Kai_grid1">
-                {gridData.map((data) => {
-                    const isVideo = data.img.endsWith(".mp4");
-                    return (
-                        <article key={data.id} className="art-piece">
-                            <div className="art-img-wrapper">
-                                {isVideo ? (
-                                    <video
-                                        className="art-img"
-                                        src={data.img}
-                                        autoPlay
-                                        loop
-                                        muted
-                                        playsInline
-                                    />
-                                ) : (
-                                    <img
-                                        className="art-img"
-                                        src={data.img}
-                                        alt={data.name}
-                                    />
-                                )}
-                            </div>
-                        </article>
-                    );
-                })}
-            </main>
-            <div className="bottom-nav" aria-label="Bottom navigation">
-                <nav className="bottom-nav__inner" role="navigation">
-                    <a href="/" className="bottom-nav__link" title="Art Gallery">ART GALLERY</a>
-                    {/* <a href="/Kailas/#/crafts" className="bottom-nav__link" title="Crafts">Crafts</a> */}
-                </nav>
+  const [gridData, setGridData] = useState([]);
+
+  useEffect(() => {
+    async function getVideo() {
+      const { data, error } = await supabase
+        .from("MP4_table")
+        .select("id, video_url");
+
+      if (error) console.log(error);
+      else setGridData(data);
+    }
+
+    getVideo();
+  }, []);
+
+  return (
+    <>
+      <header>
+        <div className="page-header">
+          <h1 className="h1_1">Kailas S.R Art Corner</h1>
+          <h5>Animations</h5>
+        </div>
+      </header>
+
+      <main className="Kai_grid1">
+        {gridData.map((data) => (
+          <article key={data.id} className="art-piece">
+            <div className="art-img-wrapper">
+              <VideoItem src={data.video_url} />
             </div>
-            <footer>
-                <hr />
-            </footer>
-        </>
-    )
+          </article>
+        ))}
+      </main>
+
+      <div className="bottom-nav" aria-label="Bottom navigation">
+        <nav className="bottom-nav__inner" role="navigation">
+          <Link to="/" className="bottom-nav__link">
+            ART GALLERY
+          </Link>
+        </nav>
+      </div>
+
+      <footer>
+        <hr />
+      </footer>
+    </>
+  );
 }

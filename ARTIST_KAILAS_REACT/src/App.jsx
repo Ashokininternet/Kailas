@@ -1,6 +1,6 @@
+import { Routes, Route } from 'react-router-dom';
 import { AnimationPage } from './AnimationPage';
 import { CraftsPage } from './CraftsPage';
-import { Routes, Route } from 'react-router';
 import './App.css'
 import HomePage from './HomePage'
 
