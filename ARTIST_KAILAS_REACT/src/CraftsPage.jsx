@@ -18,7 +18,7 @@ export function CraftsPage() {
                         <nav className="bottom-nav__inner" role="navigation"> 
                             <a href="/Kailas/#/" className="bottom-nav__link" title="Art Gallery">ART GALLERY</a> 
                             
-                            <a href="/" className="bottom-nav__link" title="Animation">Animation</a> 
+                            <a href="/Kailas/" className="bottom-nav__link" title="Animation">Animation</a> 
                         </nav> 
                     </div>
                     <footer>
