@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
 
-// ✅ Optimized Video Component
+// Optimized Video Component
 function VideoItem({ src }) {
   const videoRef = useRef(null);
 
@@ -21,7 +21,7 @@ function VideoItem({ src }) {
             if (v !== video) v.pause();
           });
 
-          video.play().catch(() => {});
+          // video.play().catch(() => {});
         } else {
           video.pause();
         }
@@ -46,7 +46,7 @@ function VideoItem({ src }) {
   );
 }
 
-// ✅ Main Page
+// Main Page
 export function AnimationPage() {
   const [gridData, setGridData] = useState([]);
 
