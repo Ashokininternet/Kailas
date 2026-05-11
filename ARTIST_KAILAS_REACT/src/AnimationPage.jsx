@@ -67,7 +67,7 @@ export function AnimationPage() {
     <>
       <header>
         <div className="page-header">
-          <h1 className="h1_1">Kailas S.R Art Corner</h1>
+          <h1 className="h1_1">Kailas S.R's Art Corner</h1>
           <h5>Animations</h5>
         </div>
       </header>
