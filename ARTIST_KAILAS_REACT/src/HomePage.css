@@ -97,9 +97,6 @@ h5 {
     object-fit: cover;
     border: 3px solid #000;
     background: #fff;
-    -webkit-user-select: none;
-    user-select: none;
-    pointer-events: none;
 }
 
 /* TEXT AREA */
