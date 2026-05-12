@@ -38,10 +38,9 @@ function VideoItem({ src }) {
     <video
       ref={videoRef}
       className="art-img"
-      muted
       controls
       playsInline
-      preload="none"
+      // preload="none"
     />
   );
 }
